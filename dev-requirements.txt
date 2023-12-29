@@ -87,6 +87,14 @@ mdurl==0.1.2 \
     --hash=sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8 \
     --hash=sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba
     # via markdown-it-py
+miss-hit==0.9.42 \
+    --hash=sha256:1ff5f0432e31e72d4ae9605ff8976dcb3aa6bcd7ea8459e003120f1220f4f881 \
+    --hash=sha256:2994f5bcb3a59d694fc2207656dfa19e781eb89e16a4fa3763b1dcafdf470eb8
+    # via jk-ece210 (pyproject.toml)
+miss-hit-core==0.9.42 \
+    --hash=sha256:4bae077b91405123dde391dff3c73cba62c55f9fd82d3ab833c45b5bfe4381d5 \
+    --hash=sha256:8bf98607f41d18ddcfeca972d0c05468007844479f6da00a46a15a66c1c4b20c
+    # via miss-hit
 mypy-extensions==1.0.0 \
     --hash=sha256:4392f6c0eb8a5668a69e23d168ffa70f0be9ccfd32b5cc2d26a34ae5b844552d \
     --hash=sha256:75dbf8955dc00442a438fc4d0666508a9a97b6bd41aa2f0ffe9d2f2725af0782

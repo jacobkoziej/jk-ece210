@@ -24,6 +24,7 @@ repo = 'https://github.com/jacobkoziej/jk-ece210'
 dev = [
 	'black',
 	'mdformat-gfm',
+	'miss_hit',
 	'pip-tools',
 	'pre-commit',
 	'ruff',
