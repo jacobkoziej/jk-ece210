@@ -1,0 +1,50 @@
+[build-system]
+requires      = ['setuptools']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name        = 'jk-ece210'
+description = 'Jacob Koziej at The Cooper Union - ECE 210: MATLAB Seminar - Signals & Systems'
+version     = '0.0.0'
+
+authors = [
+	{name = 'Jacob Koziej', email = 'jacobkoziej@gmail.com'},
+]
+license = {'text' = 'CC-BY-NC-SA-4.0'}
+
+requires-python = '>=3.12'
+dependencies = [
+	'scons',
+]
+
+[project.urls]
+repo = 'https://github.com/jacobkoziej/jk-ece210'
+
+[project.optional-dependencies]
+dev = [
+	'black',
+	'mdformat-gfm',
+	'pip-tools',
+	'pre-commit',
+	'ruff',
+]
+
+[tool.black]
+line-length               = 79
+skip-string-normalization = true
+
+[tool.pip-tools]
+allow-unsafe    = true
+generate-hashes = true
+strip-extras    = false
+upgrade         = true
+verbose         = true
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.format]
+quote-style = 'single'
+
+[tool.setuptools.packages.find]
+exclude = ['*']
