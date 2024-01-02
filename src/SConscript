@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# Copyright (C) 2024  Jacob Koziej <jacobkoziej@gmail.com>
+
+Import('env')
+
+
+targets = []
+
+targets += env.Substfile(
+    'git-hash.tex.in', SUBST_DICT={'@GIT_HASH@': env['GIT_HASH']}
+)
+
+
+Return('targets')

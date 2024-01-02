@@ -49,3 +49,8 @@ git_dirty = subprocess.run(
 ).stdout.strip()
 
 env['GIT_HASH'] = git_hash if not git_dirty else f'{git_hash}-dirty'
+
+
+VariantDir(f'{build}/{src}', src)
+
+SConscript(f'{build}/{src}/SConscript')
