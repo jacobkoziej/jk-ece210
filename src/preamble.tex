@@ -9,8 +9,38 @@
 }
 
 \usepackage{bookmark}
+\usepackage{fancyhdr}
+\usepackage{fontawesome}
 \usepackage{titling}
+
+\input{git-hash}
 
 \author{Jacob~Koziej}
 
-\include{git-hash}
+\pagestyle{fancy}
+
+\fancyhead{}
+\fancyhead[L]{%
+	\small\slshape%
+	ECE 210: MATLAB Seminar -- Signals \& Systems%
+}
+\fancyhead[R]{%
+	\scriptsize\ttfamily%
+	\faCodeFork\,\gitHash\gitDirty%
+}
+\fancyfoot{}
+\fancyfoot[L]{%
+	\scriptsize\slshape%
+	Copyright \copyright\ 2024 \theauthor%
+	~---~%
+	\ttfamily%
+	\href{https://creativecommons.org/licenses/by-nc-sa/4.0/}%
+	{CC BY-NC-SA 4.0}%
+}
+\fancyfoot[R]{%
+	\scriptsize\ttfamily%
+	\href{https://github.com/jacobkoziej/jk-ece210}%
+	{github.com/jacobkoziej/jk-ece210}%
+}
+\RenewDocumentCommand{\footrule}{}{\rule{\headwidth}{\headrulewidth}}
+\RenewDocumentCommand{\footruleskip}{}{1pt}
