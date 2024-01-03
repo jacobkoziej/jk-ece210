@@ -3,4 +3,12 @@
 % git-hash.tex -- git hash
 % Copyright (C) 2024  Jacob Koziej <jacobkoziej@gmail.com>
 
-\NewDocumentCommand{\gitHash}{}{@GIT_HASH@}
+\NewDocumentCommand{\gitDirty}{}{@GIT_DIRTY@}
+\NewDocumentCommand{\gitHash}{}{%
+	\href{https://github.com/jacobkoziej/jk-ece210/commit/@GIT_HASH_LONG@}%
+	{@GIT_HASH@}%
+}
+\NewDocumentCommand{\gitHashLong}{}{%
+	\href{https://github.com/jacobkoziej/jk-ece210/commit/@GIT_HASH_LONG@}%
+	{@GIT_HASH_LONG@}%
+}

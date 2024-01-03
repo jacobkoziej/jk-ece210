@@ -8,7 +8,12 @@ Import('env')
 targets = []
 
 targets += env.Substfile(
-    'git-hash.tex.in', SUBST_DICT={'@GIT_HASH@': env['GIT_HASH']}
+    'git-hash.tex.in',
+    SUBST_DICT={
+        '@GIT_DIRTY@': env['GIT_DIRTY'],
+        '@GIT_HASH@': env['GIT_HASH'],
+        '@GIT_HASH_LONG@': env['GIT_HASH_LONG'],
+    },
 )
 
 

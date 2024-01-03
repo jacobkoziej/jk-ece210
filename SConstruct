@@ -39,16 +39,28 @@ Export('env')
 
 
 git = env.WhereIs('git')
-git_hash = subprocess.run(
+
+env['GIT_DIRTY'] = (
+    '-dirty'
+    if subprocess.run(
+        [git, 'status', '--porcelain'],
+        capture_output=True,
+        encoding='utf-8',
+    ).stdout.strip()
+    else ''
+)
+
+env['GIT_HASH'] = subprocess.run(
     [git, 'rev-parse', '--short', 'HEAD'],
     capture_output=True,
     encoding='utf-8',
 ).stdout.strip()
-git_dirty = subprocess.run(
-    [git, 'status', '--porcelain'], capture_output=True, encoding='utf-8'
-).stdout.strip()
 
-env['GIT_HASH'] = git_hash if not git_dirty else f'{git_hash}-dirty'
+env['GIT_HASH_LONG'] = subprocess.run(
+    [git, 'rev-parse', 'HEAD'],
+    capture_output=True,
+    encoding='utf-8',
+).stdout.strip()
 
 
 VariantDir(f'{build}/{src}', src)
