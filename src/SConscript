@@ -16,5 +16,7 @@ targets += env.Substfile(
     },
 )
 
+targets += env.PDF('syllabus.tex')
+
 
 Return('targets')
