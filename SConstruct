@@ -19,13 +19,12 @@ build = 'build'
 src = 'src'
 
 
-env = Environment()
-
-if path := os.environ.get('PATH'):
-    env['ENV']['PATH'] = path
-
-if term := os.environ.get('TERM'):
-    env['ENV']['TERM'] = term
+env = Environment(
+    ENV={
+        'PATH': os.environ['PATH'],
+        'TERM': os.environ.get('TERM'),
+    },
+)
 
 env.Replace(PDFLATEX='lualatex')
 env.AppendUnique(
