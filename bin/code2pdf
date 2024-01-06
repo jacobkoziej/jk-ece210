@@ -1,0 +1,41 @@
+#!/bin/sh
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# code2pdf -- convert code to pdf
+# Copyright (C) 2024  Jacob Koziej <jacobkoziej@gmail.com>
+
+test -z "$1" && echo "usage: $0 INPUT [OUTPUT]" && exit 1
+
+TMPDIR=$(mktemp -d)
+trap 'rm -rf '"$TMPDIR"'; exit 1' HUP INT TERM
+
+INPUT="$1"
+BASENAME="${INPUT##*/}"
+BASENAME="${BASENAME%%.*}"
+BASEDIR="${INPUT%/*}"
+TEXOUTPUT="$TMPDIR/$BASENAME.tex"
+PDFOUTPUT="$TMPDIR/$BASENAME.pdf"
+OUTPUT="${2:-$BASEDIR/$BASENAME.pdf}"
+
+die()
+{
+	rm -rf "$TMPDIR"
+	exit 1
+}
+
+pygmentize \
+	"$INPUT" \
+	-P full=true \
+	-P linenos=true \
+	-P preamble='\usepackage[margin=2cm,paper=letterpaper]{geometry}' \
+	-P title="\\Verb@$INPUT@" \
+	-o "$TEXOUTPUT" ||
+	die
+
+lualatex \
+	--output-directory="$TMPDIR" \
+	"$TEXOUTPUT" ||
+	die
+
+mv "$PDFOUTPUT" "$OUTPUT"
+rm -rf "$TMPDIR"
