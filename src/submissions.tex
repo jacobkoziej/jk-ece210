@@ -49,4 +49,15 @@ code content over style.  There are instances where a code formatter's
 decisions can make your code more difficult to read than a
 non-standardized formatting approach.  In these rare cases, feel free to
 add a MISS\_HIT pragma to ignore the line(s) in question.
+
+\section{Printing Code}
+
+Strangely enough, I would like paper submissions of your MATLAB code.
+To aid in creating printable PDFs, I've written \href{https://github.%
+com/jacobkoziej/jk-ece210/blob/master/bin/code2pdf}{\texttt{code2pdf}}.
+The first argument should be the path to the input file.  The second
+optional argument is the output file path.  If you don't specify an
+output path, the script will default to generating a PDF in the same
+base directory as the input file with the same base name.  Be careful,
+as this command can be destructive!
 \end{document}
