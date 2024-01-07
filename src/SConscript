@@ -17,6 +17,8 @@ targets += env.Substfile(
 )
 
 targets += env.PDF('submissions.tex')
+env.SideEffect(Glob('_minted-submissions/*.pygstyle'), targets[-1])
+env.SideEffect(Glob('_minted-submissions/*.pygtex'), targets[-1])
 
 targets += env.PDF('syllabus.tex')
 
