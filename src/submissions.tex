@@ -17,6 +17,29 @@ To streamline grading, I ask you submit assignments as described below.
 Please follow the submission guidelines, as I \underline{will not grade}
 work that does not meet these expectations!
 
+\section{File Header}
+
+Since one day you might be a professional engineer, it's important to
+give people who read your code some basic information about your work. A
+file header can aid in this:
+
+\begin{minted}{matlab}
+% SPDX-License-Identifier: GPL-3.0-or-later
+%
+% fib.m -- calculate the Nth Fibonacci number
+% Copyright (C) 2024  Jacob Koziej <jacobkoziej@gmail.com>
+\end{minted}
+
+\noindent
+Notice the file name and short justification for the file's existence.
+Also note the line with copyright information, but more importantly, a
+contact email for desperate questions from junior engineers in a few
+years.  Additionally, you can add licensing information if you plan to
+share your code online.  If you're unsure about which license to choose,
+I recommend checking out \url{https://choosealicense.com/} and then
+finding the associated \href{https://spdx.org/licenses/}{\texttt{SPDX%
+-License-Identifier}}.
+
 \section{Code Normalization}
 
 Normalize your code using \href{https://florianschanda.github.io/%
