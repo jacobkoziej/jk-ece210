@@ -60,4 +60,24 @@ optional argument is the output file path.  If you don't specify an
 output path, the script will default to generating a PDF in the same
 base directory as the input file with the same base name.  Be careful,
 as this command can be destructive!
+
+\section{Saving Figures}
+
+Part of the reason why people put up with MATLAB is because it can
+generate good figures from performed calculations.  That said, they're
+not of much use if condemned to the realm of MathWorks.  To create a PDF
+with vectorized versions of all your figures, add the following snippet
+to your MATLAB code:
+
+\begin{minted}{matlab}
+OUTPUT = 'output.pdf';
+
+r = groot;
+
+delete(OUTPUT);
+for i = numel(r.Children):-1:1
+    exportgraphics(r.Children(i), OUTPUT, ...
+                   'Append', true, 'ContentType', 'vector');
+end
+\end{minted}
 \end{document}
