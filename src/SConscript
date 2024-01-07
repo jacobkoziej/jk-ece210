@@ -5,6 +5,9 @@
 Import('env')
 
 
+env.PrependENVPath('TEXINPUTS', env.Dir('.').abspath)
+
+
 targets = []
 
 targets += env.Substfile(
