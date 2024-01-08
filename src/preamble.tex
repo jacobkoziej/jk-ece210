@@ -53,6 +53,8 @@
 \RenewDocumentCommand{\footrule}{}{\rule{\headwidth}{\headrulewidth}}
 \RenewDocumentCommand{\footruleskip}{}{1pt}
 
+\NewDocumentCommand{\footurl}{m}{\footnote{\url{#1}}}
+
 \NewDocumentCommand{\renderTitle}{}{%
 	{\noindent\LARGE\scshape\thetitle\vspace{1ex}}%
 	\pdfbookmark[1]{\thetitle}{title}%
