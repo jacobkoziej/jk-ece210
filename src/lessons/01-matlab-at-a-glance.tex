@@ -60,4 +60,14 @@ can use the \mCommand[https://www.mathworks.com/help/matlab/ref/path.%
 html]{path} command.  To locate the path of an M-file, use the
 \mCommand[https://www.mathworks.com/help/matlab/ref/which.html]{which}
 command followed by the name of the M-file you're trying to find.
+
+\subsection{User-Defined Startup Script}
+
+If you'd like to execute some commands before MATLAB starts, you can add
+a \mCommand[https://www.mathworks.com/help/matlab/ref/startup.html]%
+{startup} M-file in the search path.  This file is handy if you wish to
+modify the environment at runtime (i.e. set graphic options).  Feel free
+to take a look at my \href{https://github.com/jacobkoziej/dotfiles/%
+blob/master/.config/matlab/startup.m}{\texttt{startup.m}} if you'd like
+to see an example.
 \end{document}
