@@ -45,4 +45,19 @@ Confusingly, M-files can be both executable user scripts or define
 functions, which we can then reference in other M-files.  To execute the
 contents of an M-file, type its name into the command prompt without the
 \texttt{.m} extension.
+
+\subsection{But Where to Find M-Files?}
+
+\vocab{The MATLAB Search Path}\footurl{https://www.mathworks.com/help/%
+matlab/matlab_env/what-is-the-matlab-search-path.html} specifies the
+paths MATLAB will search for M-files.  It will first search the current
+working directory (accessible with \mCommand[https://www.mathworks.com/%
+help/matlab/ref/pwd.html]{pwd}), your \mCommand[https://www.mathworks%
+.com/help/matlab/ref/userpath.html]{userpath}, paths specified in the
+\texttt{MATLABPATH} environment variable, and finally, paths added by
+installed packages.  To view the paths in the current search path, you
+can use the \mCommand[https://www.mathworks.com/help/matlab/ref/path.%
+html]{path} command.  To locate the path of an M-file, use the
+\mCommand[https://www.mathworks.com/help/matlab/ref/which.html]{which}
+command followed by the name of the M-file you're trying to find.
 \end{document}
