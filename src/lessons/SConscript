@@ -8,6 +8,7 @@ Import('env')
 targets = []
 
 targets += env.PDF('01-matlab-at-a-glance.tex')
+env.SideEffect(Glob('_minted-matlab-at-a-glance/*'), targets[-1])
 
 
 Return('targets')
