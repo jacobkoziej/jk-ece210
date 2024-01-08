@@ -64,6 +64,16 @@
 \RenewDocumentCommand{\footrule}{}{\rule{\headwidth}{\headrulewidth}}
 \RenewDocumentCommand{\footruleskip}{}{1pt}
 
+\NewDocumentCommand{\aside}{m}{%
+	\marginnote{%
+		\footnotesize%
+		\raggedright%
+		\textsl{\textbf{Aside---}}%
+		\par\noindent%
+		#1%
+	}
+}
+
 \NewDocumentCommand{\footurl}{m}{\footnote{\url{#1}}}
 
 \NewDocumentCommand{\mCommand}{om}{%
