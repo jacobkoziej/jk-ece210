@@ -73,6 +73,10 @@
 	}%
 }
 
+\NewDocumentCommand{\matrixField}{mmm}{%
+	\symrm{M}_{#1 \times #2} (\symbb{#3})%
+}
+
 \NewDocumentCommand{\renderTitle}{}{%
 	{\noindent\LARGE\scshape\thetitle\vspace{1ex}}%
 	\pdfbookmark[1]{\thetitle}{title}%
