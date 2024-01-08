@@ -55,6 +55,14 @@
 
 \NewDocumentCommand{\footurl}{m}{\footnote{\url{#1}}}
 
+\NewDocumentCommand{\mCommand}{om}{%
+	\IfValueTF{#1} {%
+		\href{#1}{\mintinline{matlab}{#2}}%
+	} {%
+		\mintinline{matlab}{#2}%
+	}%
+}
+
 \NewDocumentCommand{\renderTitle}{}{%
 	{\noindent\LARGE\scshape\thetitle\vspace{1ex}}%
 	\pdfbookmark[1]{\thetitle}{title}%
