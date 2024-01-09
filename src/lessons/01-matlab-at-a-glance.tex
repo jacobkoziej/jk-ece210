@@ -103,4 +103,40 @@ infinite amount of singleton dimensions.\footnotemark}\footnotetext{%
 \url{https://blogs.mathworks.com/loren/2006/08/09/essence-of-indexing/}}
 
 \inputminted{matlab}{01-matlab-at-a-glance.d/instantiate-matrix.m}
+
+\subsection{Array \& Matrix Operations}
+
+Array operations execute on a per-element basis, while matrix operations obey
+the rules of linear algebra.
+
+\begin{longtable}{p{0.15\textwidth}p{0.4\textwidth}}
+\toprule
+Operator & Purpose \\
+\midrule
+\mCommand{A + B}  & Addition                    \\
+\mCommand{+A}     & Unary addition              \\
+\mCommand{A - B}  & Subtraction                 \\
+\mCommand{-A}     & Unary subtraction           \\
+\mCommand{A .* B} & Element-wise multiplication \\
+\mCommand{A .^ B} & Element-wise power          \\
+\mCommand{A ./ B} & Right array division        \\
+\mCommand{A .\ B} & Left array division         \\
+\mCommand{A.'}    & Array transpose             \\
+\bottomrule
+\\
+\caption{Array Operations}
+\end{longtable}
+
+\begin{longtable}{p{0.15\textwidth}p{0.4\textwidth}}
+\toprule
+Operator & Purpose \\
+\midrule
+\mCommand{A * B}  & Multiplication \\
+\mCommand{A \ B}  & Left division  \\
+\mCommand{A / B}  & Right division \\
+\mCommand{A ^ B}  & Power          \\
+\bottomrule
+\\
+\caption{Matrix Operations}
+\end{longtable}
 \end{document}
