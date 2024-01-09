@@ -75,4 +75,32 @@ to see an example.
 
 Now that we have the \emph{slightest} idea of what's going on, it's out
 the frying pan and into the fire!
+
+\subsection{Everything's a Matrix!}
+
+Who would have thought that MATrix LABratory represents its data as
+matrices?  Matrices generally have three forms:
+
+\begin{itemize}
+	\item
+		Matrices of the form \(\matrixField{m}{n}{F}\)
+
+	\item
+		Vectors of the form \(\matrixField{m}{1}{F}\) or
+		\(\matrixField{1}{n}{F}\)
+
+	\item
+		Scalars of the form \(\matrixField{1}{1}{F}\)
+\end{itemize}
+
+\noindent
+Certain MATLAB commands may want a specific type of matrix (i.e. a row
+vector) or may operate on different portions of a matrix (i.e. its
+columns).  We will see examples of this later.  For now, let's go over
+how you might instantiate different types of matrices:\aside{Well,
+actually, these are all represented as N-dimensional arrays with an
+infinite amount of singleton dimensions.\footnotemark}\footnotetext{%
+\url{https://blogs.mathworks.com/loren/2006/08/09/essence-of-indexing/}}
+
+\inputminted{matlab}{01-matlab-at-a-glance.d/instantiate-matrix.m}
 \end{document}
