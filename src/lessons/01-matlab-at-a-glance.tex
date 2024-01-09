@@ -139,4 +139,15 @@ Operator & Purpose \\
 \\
 \caption{Matrix Operations}
 \end{longtable}
+
+\subsection{Memory Representation}
+
+MATLAB stores matrices in column-major order.  Each entry can be real or
+complex-valued.  In the case of a matrix consisting of complex values,
+MATLAB will internally allocate two matrices: one for the real component
+of an entry and another for the complex component of an entry.  Although
+you don't see this duplicate matrix business on your end, it is
+important to keep this in mind as each element of these matrices is an
+IEEE 754 double\footurl{https://en.wikipedia.org/wiki/IEEE_754}, which
+can use a lot of memory as matrices grow in size!
 \end{document}
