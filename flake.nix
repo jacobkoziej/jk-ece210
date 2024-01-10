@@ -19,7 +19,7 @@
       {
         devShells.default = pkgs.mkShell {
           packages = [
-	    pkgs.texliveFull
+            pkgs.texliveFull
             pkgs.nixpkgs-fmt
             python
           ];
