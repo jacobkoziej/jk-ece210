@@ -150,4 +150,25 @@ you don't see this duplicate matrix business on your end, it is
 important to keep this in mind as each element of these matrices is an
 IEEE 754 double\footurl{https://en.wikipedia.org/wiki/IEEE_754}, which
 can use a lot of memory as matrices grow in size!
+
+\subsection{Sparse Matrices}
+
+\vocab{Sparse matrices}\footurl{https://en.wikipedia.org/wiki/Sparse%
+_matrix} are matrices that consist mostly of zero entries.  Although
+they \emph{can} be represented as regular matrices, once they grow to
+insane sizes (i.e.~\(\matrixField{1,000,000}{1,000,000}{F}\)), the walls
+of the real world start crashing down.  To get around this, MATLAB
+matrices either have a full or sparse \vocab{storage class}, the latter
+made for efficiently storing sparse data.
+
+MathWorks has worked hard for full and sparse matrices to play nicely,
+and for the most part, they do as almost any operation that works on a
+full matrix works for a sparse matrix.  With the exception of a few
+operations, any operation performed with a sparse matrix will result in
+a sparse matrix.
+
+To learn more about sparse matrices, visit \url{https://www.mathworks.%
+com/help/matlab/sparse-matrices.html}, and if you're interested in their
+implementation, feel free to read \url{https://www.mathworks.com/help/%
+pdf_doc/otherdocs/simax.pdf}.
 \end{document}
