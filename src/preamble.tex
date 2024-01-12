@@ -86,6 +86,8 @@
 
 \NewDocumentCommand{\footurl}{m}{\footnote{\url{#1}}}
 
+\NewDocumentCommand{\im}{}{\symrm{j}}
+
 \NewDocumentCommand{\mCommand}{om}{%
 	\IfValueTF{#1} {%
 		\href{#1}{\mintinline{matlab}{#2}}%
