@@ -25,7 +25,12 @@ env.SideEffect(Glob('_minted-submissions/*'), targets[-1])
 targets += env.PDF('syllabus.tex')
 
 
-targets += SConscript('lessons/SConscript')
+targets += SConscript(
+    [
+        'assignments/SConscript',
+        'lessons/SConscript',
+    ]
+)
 
 
 Return('targets')
