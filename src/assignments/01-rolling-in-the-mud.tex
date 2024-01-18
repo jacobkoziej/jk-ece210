@@ -66,5 +66,37 @@
 			+
 			\left\lceil\e^{7.5858}\right\rceil
 		\end{equation}
+
+	\item
+		Of all the operators that we covered, matrix left
+		division, \mCommand[https://www.mathworks.com/help/%
+		symbolic/mldivide.html]{mldivide}, isn't commonly seen
+		in other programming languages.  What's sepcial about
+		this operator is that it allows us to pragmatically
+		solve systems of linear equations of the form
+		\(\mat{A}\mat{x} = \mat{b}\).
+
+		Read the documentation for left matrix division and
+		solve the system of linear equations given coefficient
+		matrix
+		\begin{equation}
+			\mat{A}
+			=
+			\begin{bmatrix}
+				1 & -11 & -3 \\
+				1 &   1 &  0 \\
+				2 &   5 &  1 \\
+			\end{bmatrix}
+		\end{equation}
+		and constants
+		\begin{equation}
+			\mat{b}
+			=
+			\begin{bmatrix}
+				-37 \\
+				 -1 \\
+				 10 \\
+			\end{bmatrix}.
+		\end{equation}
 \end{enumerate}
 \end{document}
