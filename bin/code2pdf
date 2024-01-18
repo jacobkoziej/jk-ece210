@@ -10,9 +10,8 @@ TMPDIR=$(mktemp -d)
 trap 'rm -rf '"$TMPDIR"'; exit 1' HUP INT TERM
 
 INPUT="$1"
-BASENAME="${INPUT##*/}"
-BASENAME="${BASENAME%%.*}"
-BASEDIR="${INPUT%/*}"
+BASENAME="$(basename "${INPUT%%.*}")"
+BASEDIR="$(dirname "$INPUT")"
 TEXOUTPUT="$TMPDIR/$BASENAME.tex"
 PDFOUTPUT="$TMPDIR/$BASENAME.pdf"
 OUTPUT="${2:-$BASEDIR/$BASENAME.pdf}"
