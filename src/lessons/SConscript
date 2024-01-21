@@ -11,5 +11,7 @@ targets += env.PDF('01-matlab-at-a-glance.tex')
 env.SideEffect(Glob('_minted-01-matlab-at-a-glance/*'), targets[-1])
 env.Depends(targets[-1], SConscript('01-matlab-at-a-glance.d/SConscript'))
 
+targets += env.PDF('02-vectorization.tex')
+
 
 Return('targets')
