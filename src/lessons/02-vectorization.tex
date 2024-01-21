@@ -43,4 +43,35 @@ We could instead utilize \mCommand[https://www.mathworks.com/help/%
 matlab/ref/linspace.html]{linspace()}:
 
 \mCommandOutput{02-vectorization.d/linspace}
+
+\section{Indexing}
+
+Now, to \emph{ruin} your day.  MATLAB starts indexing at one...
+
+Let's reuse \(\mat{x}\) from the previous section.  We can access the
+third element of \(\mat{x}\) like so:
+
+\mCommandOutput{02-vectorization.d/third-element}
+
+We can also access multiple elements at once:
+
+\mCommandOutput{02-vectorization.d/multiple-elements}
+
+Or if we're so inclined, the penultimate element:
+
+\mCommandOutput{02-vectorization.d/penultimate-element}
+
+Matrices logically follow by adding another index:
+
+\mCommandOutput{02-vectorization.d/matrix-index}
+
+\begin{minipage}{\textwidth}
+	We can also index \emph{linearly:}
+
+	\vspace{1em}
+
+	\mCommandOutput{02-vectorization.d/linear-index}
+\end{minipage}
+
+But that's an adventure for another time \texttt{;)}
 \end{document}
