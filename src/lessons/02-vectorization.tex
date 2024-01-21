@@ -99,4 +99,49 @@ MATLAB offers a few convenient functions just for this!
 		\mCommand[https://www.mathworks.com/help/matlab/ref/%
 		numel.html]{numel()} --- the number of array elements
 \end{itemize}
+
+\section{Reshaping Arrays}
+
+Say we wanted to create the following matrix:
+
+\begin{equation}
+	\mat{A}
+	=
+	\begin{bmatrix}
+		1 & 4 & 7\\
+		2 & 5 & 8\\
+		3 & 6 & 9\\
+	\end{bmatrix}
+\end{equation}
+
+We can agree that it's nothing more than
+
+\begin{equation}
+	\mat{a}
+	=
+	(1, 2, 3, 4, 5, 6, 7, 8, 9),
+\end{equation}
+
+where each column of \(\mat{A}\) is every three elements of \(\mat{a}\).
+
+\begin{minipage}{\textwidth}
+	We can achieve this pragmatically with \mCommand[https://www.%
+	mathworks.com/help/matlab/ref/reshape.html]{reshape()}:
+
+	\vspace{1em}
+
+	\mCommandOutput{02-vectorization.d/reshape}
+\end{minipage}
+
+What's important to note is that for a reshape to be possible, the
+resultant array must have the same number of elements.  Given this, we
+can let MATLAB do the hard work of determining a dimension for us:
+
+\mCommandOutput{02-vectorization.d/lazy-reshape}
+
+We could also \emph{flatten} a matrix by reshaping, but you'll rarely
+see a MATLAB programmer do it this way.  Instead, most programmers will
+linearly index all the elements of the matrix:
+
+\mCommandOutput{02-vectorization.d/flatten}
 \end{document}
