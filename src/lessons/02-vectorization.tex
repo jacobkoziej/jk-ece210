@@ -144,4 +144,33 @@ see a MATLAB programmer do it this way.  Instead, most programmers will
 linearly index all the elements of the matrix:
 
 \mCommandOutput{02-vectorization.d/flatten}
+
+\section{Broadcasting}
+
+Probably the most trippy thing when you first start using MATLAB is the
+concept of \vocab{broadcasting}.  In essence, when working with array
+operations, MATLAB will take the liberty of \emph{implicitly} doing a
+\mCommand[https://www.mathworks.com/help/matlab/ref/repmat.html]%
+{repmat()} to make the sizes of operations work out.
+
+\begin{minipage}{\textwidth}
+	Take for example:
+
+	\vspace{1em}
+
+	\mCommandOutput{02-vectorization.d/broadcast}
+\end{minipage}
+
+Strange, but it's as if we had performed the following operation
+manually:
+
+\inputminted{matlab}{02-vectorization.d/broadcast-implicit.m}
+
+Although broadcasting is \emph{very} convenient, it is always waiting
+for you to drop your guard to stab you in the back when you least expect
+it.  Having been a victim of MATLAB's senseless violence, you can do
+nothing besides being cautious around broadcasting operations to avoid
+introducing some \emph{nasty} bugs.\footnote{Worst of all, you might
+even introduce a broadcasting operation unintentionally; that's when
+the real head-banging can begin!}
 \end{document}
