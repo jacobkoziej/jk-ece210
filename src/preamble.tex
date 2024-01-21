@@ -101,7 +101,8 @@
 \NewDocumentCommand{\mCommandOutput}{m}{%
 	\begin{minipage}{\textwidth}%
 	\inputminted{matlab}{#1.m}%
-	\rule{4em}{0.4pt}%
+	\vspace{1em}%
+	\footnoterule%
 	\inputminted{text}{#1.txt}%
 	\end{minipage}%
 }
