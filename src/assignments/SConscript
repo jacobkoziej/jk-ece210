@@ -9,5 +9,7 @@ targets = []
 
 targets += env.PDF('01-rolling-in-the-mud.tex')
 
+targets += env.PDF('02-a-new-way-of-thinking.tex')
+
 
 Return('targets')
