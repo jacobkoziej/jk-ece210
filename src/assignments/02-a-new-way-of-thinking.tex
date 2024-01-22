@@ -71,5 +71,29 @@
 				can give you a \enquote{nice} matrix to
 				play with.}
 		\end{enumerate}
+
+	\item
+		We can \enquote{perfectly}\footnote{Well, not quite due
+		to the Gibbs phenomenon.} represent a square wave with a
+		Fourier series like so:
+		\begin{equation}
+			a_n = 2n + 1
+		\end{equation}
+		\begin{equation}
+			s
+			=
+			\sum_{n = 0}^\infty
+			\frac{sin(a_n t)}{a_n}
+		\end{equation}
+		Plot the resultant approximation for \(n \in [0, 50]\)
+		over 1000 evenly spaced points for \(t \in [-\cpi,
+		\cpi]\).  Assuming you stored your approximation in
+		\mCommand{s} and values for \(t\) in \mCommand{t}, you
+		can plot your solution with \mCommand{plot(t, s)}.
+
+		\hint{Use broadcasting to create a matrix with your
+		\(a_n\) and \(t\) values so that you can efficiently
+		\mCommand[https://www.mathworks.com/help/matlab/ref/%
+		sum.html]{sum()} over your different sine waves!}
 \end{enumerate}
 \end{document}
