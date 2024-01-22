@@ -173,4 +173,44 @@ nothing besides being cautious around broadcasting operations to avoid
 introducing some \emph{nasty} bugs.\footnote{Worst of all, you might
 even introduce a broadcasting operation unintentionally; that's when
 the real head-banging can begin!}
+
+\section{Function Calls}
+
+Depending on which function you call, its behavior on matrices will be
+different.  Let's reuse matrix \(\mat{A}\) from the previous section:
+
+\mCommandOutput{02-vectorization.d/exp}
+
+As you can see, \mCommand[https://www.mathworks.com/help/matlab/ref/%
+exp.html]{exp()} returns the exponential evaluated on each element of an
+array. However, this is notalways the case; take, for example:
+
+\mCommandOutput{02-vectorization.d/sum}
+
+Notice that \mCommand[https://www.mathworks.com/help/matlab/ref/sum.%
+html]{sum()} only evaluated the sum of each column of \(\mat{A}\). This
+example illustrates why it's important to read a function's
+documentation \emph{before} you use it, as it may not behave as you'd
+expect!
+
+Now, we turn to an interesting experiment where we sum all the elements
+of a matrix. Let's generate a \enquote{large} matrix with uniformly
+distributed pseudorandom integers:
+
+\inputminted{matlab}{02-vectorization.d/randi.m}
+
+Now, let's compare the performance of summing all the elements of matrix
+\(\mat{B}\) using two methods:
+
+\mCommandOutput{02-vectorization.d/sum-flattened}
+
+\mCommandOutput{02-vectorization.d/sum-all}
+
+Wow, I don't know about you, but flattening is \emph{significantly}
+slower than just calling \mCommand[https://www.mathworks.com/help/%
+matlab/ref/sum.html]{sum()} correctly.  The reason for this dramatic
+difference is that we need to make a flattened \emph{copy} of
+\(\mat{B}\) in memory before we can sum all the values.  It looks like
+the moral of the sorty is that a bit of reading can save you a lot of
+time!
 \end{document}

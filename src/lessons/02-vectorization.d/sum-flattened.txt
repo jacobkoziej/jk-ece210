@@ -1,0 +1,5 @@
+ans =
+
+   549929576
+
+Elapsed time is 1.052319 seconds.
