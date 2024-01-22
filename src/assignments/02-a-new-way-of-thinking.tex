@@ -36,5 +36,40 @@
 		Calculate \(10!\) using \mCommand[https://www.%
 		mathworks.com/help/matlab/ref/prod.html]{prod()} and
 		store it into variable \mCommand{f}.
+
+	\item
+		Create the following matrices:
+		\begin{enumerate}
+			\item
+				\begin{equation}
+					\mat{A}
+					=
+					\begin{bmatrix}
+						1 & 0 & 0 & 0 \\
+						0 & 0 & 1 & 0 \\
+					\end{bmatrix}
+				\end{equation}
+				\hint{Look at the documentation for the
+				\mCommand[https://www.mathworks.com/%
+				help/matlab/ref/zeros.html]{zeros()}
+				function.}
+
+			\item
+				\begin{equation}
+					\mat{B}
+					=
+					\begin{bmatrix}
+						1 &  9 & 2 & 10 \\
+						3 & 11 & 4 & 12 \\
+						5 & 13 & 6 & 14 \\
+						7 & 15 & 8 & 16 \\
+					\end{bmatrix}
+				\end{equation}
+				\hint{MATLAB stores matrices in column
+				major order.  An intermediate
+				\mCommand{reshape()} with a transpose
+				can give you a \enquote{nice} matrix to
+				play with.}
+		\end{enumerate}
 \end{enumerate}
 \end{document}
