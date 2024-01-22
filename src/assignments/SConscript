@@ -10,6 +10,7 @@ targets = []
 targets += env.PDF('01-rolling-in-the-mud.tex')
 
 targets += env.PDF('02-a-new-way-of-thinking.tex')
+env.SideEffect(Glob('_minted-02-a-new-way-of-thinking/*'), targets[-1])
 
 
 Return('targets')
