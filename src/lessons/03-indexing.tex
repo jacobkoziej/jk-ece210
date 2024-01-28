@@ -55,4 +55,29 @@ Say we want to select all elements of a dimension; we can use a bare
 \mCommand{:} in place of \mCommand{1:end} to save us some typing:
 
 \mCommandOutput{03-indexing.d/col}
+
+\section{Linear Indexing}
+
+Last lesson, we flirted with the idea of linear indexing without getting
+too much into how it works.  Essentially, MATLAB stores its arrays in
+column-major order,  and linear indexing is nothing more than taking
+advantage of this design decision.
+
+Take for example:
+
+\mCommandOutput{03-indexing.d/linear}
+
+You might find yourself having to convert between subscripts and linear
+indices depending on what you're trying to achieve, and for that MATLAB
+has the \mCommand[https://www.mathworks.com/help/matlab/ref/sub2ind.%
+html]{sub2ind()} and \mCommand[https://www.mathworks.com/help/matlab/%
+ref/ind2sub.html]{ind2sub()} functions.
+
+As the names may suggest, they return return one indexing regime given
+the other.  The only requirement for these functions is the size of the
+array you're working with:
+
+\mCommandOutput{03-indexing.d/ind2sub}
+
+\mCommandOutput{03-indexing.d/sub2ind}
 \end{document}
