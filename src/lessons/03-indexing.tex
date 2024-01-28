@@ -80,4 +80,47 @@ array you're working with:
 \mCommandOutput{03-indexing.d/ind2sub}
 
 \mCommandOutput{03-indexing.d/sub2ind}
+
+\section{Logical Arrays}
+
+We've finally reached the point where we can introduce a new datatype:
+the \emph{logical} datatype.  MATLAB logical values operate over
+\(\Z_2\) where \mCommand{0} denotes \mCommand[https://www.mathworks.%
+com/help/matlab/ref/false.html]{false}, and \mCommand{1} denotes
+\mCommand[https://www.mathworks.com/help/matlab/ref/true.html]{true}.
+
+What makes logical arrays so powerful is that they obey the rules of
+Boolean Algebra and allow for us to extract elements of arrays.
+
+\begin{longtable}{p{0.15\textwidth}p{0.65\textwidth}}
+\toprule
+Operator & Purpose \\
+\midrule
+\mCommand{&}   & Logical AND                                         \\
+\mCommand{&&}  & Logical AND with short-circuiting                   \\
+\mCommand{~}   & Logical NOT                                         \\
+\mCommand{|}   & Logical OR                                          \\
+\mCommand{||}  & Logical OR with short-circuiting                    \\
+\mCommand{xor} & Logical exclusive-OR                                \\
+\mCommand{all} & Determine if all array elements are nonzero or true \\
+\mCommand{any} & Determine if any array elements are nonzero         \\
+\bottomrule
+\\
+\caption{Logical Operations}
+\end{longtable}
+
+Say we wanted to extract the corners of \(\mat{A}\).  We could create a
+logical array with \mCommand[https://www.mathworks.com/help/matlab/ref/%
+logical.html]{logical()} with \(1\)'s in the location of the elements
+we'd like to extract:
+
+\inputminted{matlab}{03-indexing.d/corners.m}
+
+\begin{minipage}{\textwidth}
+	We can then use this logical array to index into \(\mat{A}\):
+
+	\vspace{1em}
+
+	\mCommandOutput{03-indexing.d/select}
+\end{minipage}
 \end{document}
