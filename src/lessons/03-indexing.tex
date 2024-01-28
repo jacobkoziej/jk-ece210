@@ -123,4 +123,62 @@ we'd like to extract:
 
 	\mCommandOutput{03-indexing.d/select}
 \end{minipage}
+
+\section{Relational Operations}
+
+Now that we know about logical values, we can combine this power with
+relational operators to select elements satisfying a condition.
+
+\begin{longtable}{p{0.15\textwidth}p{0.55\textwidth}}
+\toprule
+Operator & Purpose \\
+\midrule
+\mCommand{==}       & Equality                                                \\
+\mCommand{>=}       & Greater than or equal to                                \\
+\mCommand{>}        & Greater than                                            \\
+\mCommand{<=}       & Less than or equal to                                   \\
+\mCommand{<}        & Less than                                               \\
+\mCommand{~=}       & Inequality                                              \\
+\mCommand{isequal}  & Array equality                                          \\
+\mCommand{isequaln} & Array equality, treating \mCommand{NaN} values as equal \\
+\bottomrule
+\\
+\caption{Relational Operations}
+\end{longtable}
+
+For example:
+
+\mCommandOutput{03-indexing.d/lt}
+
+Notice how the result of this operation is a logical array, which might
+tempt you to utilize our previously learned logical operators!
+
+Say we wanted to get all values in the domain \((3, 7)\):
+
+\mCommandOutput{03-indexing.d/domain}
+
+As another example, we can use the \mCommand[https://www.mathworks.com/%
+help/matlab/ref/find.html]{find()} function to get the linear index of
+the element(s) that equal 5:
+
+\mCommandOutput{03-indexing.d/find}
+
+As a final example, let's select all the columns of \(\mat{A}\) that
+sum to a value greater than 30:
+
+\mCommandOutput{03-indexing.d/satisfy}
+
+Oops, it looks like we didn't get what we wanted!  Unfortunately, MATLAB
+doesn't broadcast when indexing, so we'll need to use \mCommand[https:%
+//www.mathworks.com/help/matlab/ref/repmat.html]{repmat()} to generate
+the logical matrix we desire and a \mCommand[https://www.mathworks.com/%
+help/matlab/ref/reshape.html]{reshape()} to get the final output in the
+correct format.
+
+\mCommandOutput{03-indexing.d/cols}
+
+As you can see, these operations are \emph{powerful} but may require you
+to massage the outputs to get it into the correct format.  At first,
+they may seem unintuitive, but like all things in life, you'll get the
+hang of it with persistence and patience.
 \end{document}

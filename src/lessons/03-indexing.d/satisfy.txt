@@ -1,0 +1,9 @@
+satisfy =
+
+  1x4 logical array
+
+   0   0   1   1
+
+oops =
+
+     3     4
