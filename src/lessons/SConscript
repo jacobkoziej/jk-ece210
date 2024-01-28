@@ -16,6 +16,8 @@ env.SideEffect(Glob('_minted-02-vectorization/*'), targets[-1])
 env.Depends(targets[-1], SConscript('02-vectorization.d/SConscript'))
 
 targets += env.PDF('03-indexing.tex')
+env.SideEffect(Glob('_minted-03-indexing/*'), targets[-1])
+env.Depends(targets[-1], SConscript('03-indexing.d/SConscript'))
 
 
 Return('targets')

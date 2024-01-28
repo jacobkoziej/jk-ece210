@@ -17,4 +17,42 @@ most part, the basics will suffice for most \emph{basic} operations.
 However, once you start trying to vectorize more complicated operations,
 especially ones that rely on conditions, you'll quickly find yourself
 limited in what you can calculate.
+
+\section{Traditional Indexing}
+
+For the remainder of this lesson, we'll be working with the following:
+\begin{equation}
+	\mat{x}
+	=
+	[1, 2, 3, 4, 5, 6, 7, 8]
+\end{equation}
+\begin{equation}
+	\mat{A}
+	=
+	\begin{bmatrix}
+		1 & 5 &  9 & 13 \\
+		2 & 6 & 10 & 14 \\
+		3 & 7 & 10 & 15 \\
+		4 & 8 & 11 & 16 \\
+	\end{bmatrix}
+\end{equation}
+
+We've already seen that we can access multiple elements of a vector by
+indexing with another vector:
+
+\mCommandOutput{03-indexing.d/seen}
+
+But we can also write to these elements:
+
+\mCommandOutput{03-indexing.d/write}
+
+Matrices behave much the same as this behavior extends to each
+dimension:
+
+\mCommandOutput{03-indexing.d/matrix}
+
+Say we want to select all elements of a dimension; we can use a bare
+\mCommand{:} in place of \mCommand{1:end} to save us some typing:
+
+\mCommandOutput{03-indexing.d/col}
 \end{document}
