@@ -19,4 +19,42 @@
 		\end{tikzpicture}
 	}
 \end{wrapfigure}
+
+Oh no!  There's an imposter \textit{\textsc{Among Us}} \emoji{flushed-face}
+
+Fortunately for us, we have the power of MATLAB on our side and can
+\emph{calculate} millions of scenarios to see how likely we are to lose
+to the imposter.  To make sure that we can find out our odds of survival
+before the imposter kills us, we'll need to vectorize and use our newly
+learned methods of indexing!
+
+Since it's difficult to model crewmate and imposter behavior, we'll have
+to make a few simplifications to ensure that we can complete our
+simulation in time.  The rules for our simulation are as follows:
+
+\begin{itemize}[leftmargin=*]
+	\item
+		The imposter's \emph{sus} ability is the sum of two
+		rolls of a two sided die.
+
+	\item
+		Each crewmate's \emph{sus resistance} is the roll of a
+		four sided die.
+
+	\item
+		An imposter can kill a crewmate only if their sus ability is
+		greater than the crewmate's sus resistance.
+
+	\item
+		There is one imposter, six crewmates, and twelve rounds.
+
+	\item
+		Each round, the imposter will target one crewmate at
+		random.  If the crewmate has already been killed or has
+		a greater sus resistance score, nothing happens.
+
+	\item
+		A loss occurs if one or fewer crewmates remain after the
+		twelve rounds.
+\end{itemize}
 \end{document}
