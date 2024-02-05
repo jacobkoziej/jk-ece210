@@ -37,4 +37,22 @@ from a programming language.
 \subsection{Try\dots Catch Blocks}
 
 \inputminted{matlab}{04-functions.d/try-catch.m}
+
+\section{Anonymous Functions}
+
+An anonymous function is a function that is not stored in a program
+file, but is associated with a variable whose data type is \mCommand[%
+https://www.mathworks.com/help/matlab/ref/function_handle.html]{%
+function_handle}.  Anonymous functions can accept multiple inputs and
+return one output. They can contain only a single executable statement.%
+\footurl{https://www.mathworks.com/help/matlab/matlab_prog/anonymous-%
+functions.html}
+
+We can create a function that squares like so:
+
+\inputminted{matlab}{04-functions.d/sq.m}
+
+Anonymous functions also capture context:
+
+\mCommandOutput{04-functions.d/cap}
 \end{document}

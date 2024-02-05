@@ -8,6 +8,7 @@ Import('env')
 targets = []
 
 targets += env.Glob('*.m')
+targets += env.Glob('*.txt')
 
 
 Return('targets')
