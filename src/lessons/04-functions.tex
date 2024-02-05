@@ -62,4 +62,51 @@ Function handles are essentially watered-down function pointers and
 allow us to do some pretty magical stuff:
 
 \mCommandOutput{04-functions.d/handle}
+
+\section{Standalone Functions}
+
+Functions in MATLAB can be defined in multiple ways, \emph{however}, the
+most sane way is to have them stored in a standalone M-file.  Take for
+example \texttt{fib.m}:
+
+\inputminted{matlab}{04-functions.d/fib.m}
+
+If \texttt{fib.m} is in our MATLAB path we can then call it like any
+other function:
+
+\mCommandOutput{04-functions.d/fib-call}
+
+\newpage
+
+Now for a few notes about function definitions:\footurl{https://www.%
+mathworks.com/help/matlab/matlab_prog/types-of-functions.html}
+
+\begin{itemize}
+	\item
+		If you wish to declare a function in a script file, you
+		can only do so at the \emph{end} of the file.
+
+	\item
+		For standalone functions, you may additionally declare
+		local functions \emph{after} your standalone function.
+
+	\item
+		Nested functions lexically scope to the function in
+		which they're defined and are free to access variables
+		of the parent function.
+\end{itemize}
+
+\subsection{Multiple Inputs/Outputs}
+
+\aside{If you're interested in how to define functions with
+variable-length inputs/outputs, feel free to check out \mCommand[https:%
+//www.mathworks.com/help/matlab/ref/varargin.html]{varargin} and
+\mCommand[https://www.mathworks.com/help/matlab/ref/varargout.html]{%
+varargout}.}
+
+\inputminted{matlab}{04-functions.d/outer_product.m}
+
+We can then call the function like so:
+
+\mCommandOutput{04-functions.d/outer_product-call}
 \end{document}
