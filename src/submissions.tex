@@ -59,6 +59,19 @@ output path, the script will default to generating a PDF in the same
 base directory as the input file with the same base name.  Be careful,
 as this command can be destructive!
 
+\section{Saving Command Output}
+
+To save the output of your MATLAB code, utilize the \mCommand[https://%
+www.mathworks.com/help/matlab/ref/diary.html]{diary} command:
+
+\begin{minted}{matlab}
+diary output.txt
+ScriptToRun
+\end{minted}
+
+MATLAB then saves any output from \mCommand{ScriptToRun} to
+\mCommand{output.txt}.
+
 \section{Saving Figures}
 
 Part of the reason why people put up with MATLAB is because it can
