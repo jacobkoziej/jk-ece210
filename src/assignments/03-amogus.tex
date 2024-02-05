@@ -57,4 +57,25 @@ simulation in time.  The rules for our simulation are as follows:
 		A loss occurs if one or fewer crewmates remain after the
 		twelve rounds.
 \end{itemize}
+
+To ensure that we have accurate results, we'll run our simulation for a
+million iterations.  Since we're dealing with so many iterations, please
+include the following starter code to have deterministic results:
+
+\begin{minted}{matlab}
+ITERATIONS = 1e6;
+
+CREWMATES = 6;
+ROUNDS = 12;
+
+CREWMATE_SIDES = 4;
+IMPOSTER_ROLLS = 2;
+IMPOSTER_SIDES = 2;
+
+rng(0x73757300);
+\end{minted}
+
+Here, \mCommand[https://www.mathworks.com/help/matlab/ref/rng.html]{%
+rng()} sets MATLAB's random number generator seed so that we can
+reproduce our calls to random functions.
 \end{document}
