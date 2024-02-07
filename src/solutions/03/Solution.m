@@ -39,7 +39,7 @@ ind = sub2ind(size(kills), rows, cols);
 kills(ind) = 1;
 
 %% 3
-survivors = (sus > crewmates) & kills;
+survivors = ~((sus > crewmates) & kills);
 
 %% 4
 losses = sum(survivors) <= 1;
