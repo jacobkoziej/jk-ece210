@@ -15,5 +15,7 @@ env.SideEffect(Glob('_minted-02-a-new-way-of-thinking/*'), targets[-1])
 targets += env.PDF('03-amogus.tex')
 env.SideEffect(Glob('_minted-03-amogus/*'), targets[-1])
 
+targets += env.PDF('04-func-off.tex')
+
 
 Return('targets')
