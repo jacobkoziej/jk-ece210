@@ -25,5 +25,16 @@
 		function handles that define an inner product and norm
 		for the Gram–Schmidt process.  The function should
 		return a matrix of orthonormal column vectors.
+
+	\item
+		Create an \mCommand{isorthogonal} function that accepts
+		two vectors and an inner product function handle.  The
+		function should return \mCommand{true} if the vectors
+		are orthogonal and \mCommand{false} if they are not.
+		Due to the numerical instability of the Gram-Schmidt
+		process, our orthonormal vectors may not be exactly
+		orthogonal.  Take this into account by utilizing the
+		\mCommand[https://www.mathworks.com/help/matlab/ref/%
+		eps.html]{eps} function.
 \end{enumerate}
 \end{document}
