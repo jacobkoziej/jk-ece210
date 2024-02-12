@@ -30,4 +30,36 @@ MATLAB organizes graphical objects into a hierarchical structure%
 \end{tabular}
 \caption{Organization of Graphics Objects}
 \end{figure}
+
+\section{2-D Plots}
+
+There's not much point in explaining.  Let's jump right into an example.
+
+\mCommandGraphic{05-plotting.d/basic-plot}
+
+Here \mCommand[https://www.mathworks.com/help/matlab/ref/figure.html%
+]{figure} creates a new figure that \mCommand[https://www.mathworks.%
+com/help/matlab/ref/plot.html]{plot} can interact with.  Although we
+successfully plotted our sine wave, it's quite ugly.  Let's take the
+liberty to make it a little more pretty.
+
+\mCommandGraphic{05-plotting.d/pretty-sin}
+
+\subsection{Retaining Plots}
+
+Say we wanted to plot multiple functions on the same plot:
+
+\aside{\mCommand{hold on} can be a back stabber!  Sometimes you may
+experience buggy behavior if you call it before the first plot.}
+
+\mCommandGraphic{05-plotting.d/retain}
+
+\subsection{Subplots}
+
+We can have multiple plots in a figure by doing the following:
+
+\aside{Notice the zero-crossing property of the \(\symrm{sinc}\)
+function!}
+
+\mCommandGraphic{05-plotting.d/subplots}
 \end{document}

@@ -7,6 +7,8 @@ Import('env')
 
 targets = []
 
+targets += env.Glob('*.eps')
+targets += env.Glob('*.m')
 targets += env.Glob('*.txt')
 
 
