@@ -23,5 +23,7 @@ targets += env.PDF('04-functions.tex')
 env.SideEffect(Glob('_minted-04-functions/*'), targets[-1])
 env.Depends(targets[-1], SConscript('04-functions.d/SConscript'))
 
+targets += env.PDF('05-plotting.tex')
+
 
 Return('targets')
