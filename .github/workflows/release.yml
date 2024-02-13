@@ -29,6 +29,9 @@ jobs:
       - name: remove non-pdf files
         run: find build -type f ! -iname '*.pdf' -delete
 
+      - name: remove *-eps-converted-to.pdf files
+        run: find build -type f -name '*-eps-converted-to.pdf' -delete
+
       - name: publish build
         uses: s0/git-publish-subdir-action@develop
         env:
