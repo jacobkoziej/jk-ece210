@@ -1,2 +1,2 @@
 figure;
-surf(X, Y, sinc(R));
+mesh(X, Y, sinc(R));
