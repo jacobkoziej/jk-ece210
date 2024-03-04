@@ -18,5 +18,7 @@ env.SideEffect(Glob('_minted-03-amogus/*'), targets[-1])
 targets += env.PDF('04-func-off.tex')
 env.SideEffect(Glob('_minted-04-func-off/*'), targets[-1])
 
+targets += env.PDF('05-plotting-scheming-even.tex')
+
 
 Return('targets')
