@@ -28,5 +28,7 @@ env.SideEffect(Glob('05-plotting.d/*-eps-converted-to.pdf'), targets[-1])
 env.SideEffect(Glob('_minted-05-plotting/*'), targets[-1])
 env.Depends(targets[-1], SConscript('05-plotting.d/SConscript'))
 
+targets += env.PDF('06-filter-analysis.tex')
+
 
 Return('targets')
