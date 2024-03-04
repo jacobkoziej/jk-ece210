@@ -17,4 +17,51 @@ for something of high importance for Electrical Engineers: filter
 analysis.  MATLAB offers a powerful Signal Processing Toolbox\footurl{%
 https://www.mathworks.com/products/signal.html} that allows us to
 perform this analysis with relative ease.
+
+\section{The Fast Fourier Transform}
+
+Since MATLAB exists in the \emph{real world}, we need to craft a Fourier
+Transform that can exists in the confines of our measly computer.  We
+define the multidimensional \vocab{Discrete Fourier Transform (DFT)}
+with the following:
+
+\begin{equation}
+	X[\mat{k}]
+	=
+	\sum^{n - 1}_{\mat{m} = 0}
+	x[\mat{m}]\,\e^{-\im 2\cpi \mat{k} \cdot \mat{m} / n}
+\end{equation}
+
+The equation above allows us to compute a \(n\)-point DFT of a
+\(d\)-dimensional signal.  The value of \(n\) allows us to vary our
+resolution in the frequency domain with so-called \vocab{bin
+frequencies} with the following \vocab{bin spacing}:
+
+\aside{Increasing \(n\) results in a higher resolution in the frequency
+domain at the cost of computational time.}
+
+\begin{equation}
+	\Delta \omega = \frac{2\cpi}{n}
+\end{equation}
+
+The \vocab{Fast Fourier Transform (FFT)} is nothing more than an
+\emph{optimization} of the DFT, going from \(O(n^2)\) to \(O(n\log n)\)
+by removing redundant computations.\footnote{Veritasium made a great
+video on the history behind the FFT that I highly recommend watching:
+\url{https://www.youtube.com/watch?v=nmgFG7PUHfo}}  Today, almost
+everyone implements the DFT as an FFT, and as such, you'll almost always
+incorrectly hear the DFT referred to as the FFT!
+
+In MATLAB, we can compute the FFT with the \mCommand[https://www.%
+mathworks.com/help/matlab/ref/fft.html]{fft()} function:
+
+\mCommandGraphic{06-filter-analysis.d/fft-shift}
+
+Due to how the DFT is defined, the output of \mCommand[https://www.%
+mathworks.com/help/matlab/ref/fft.html]{fft()} will be DC, followed by
+positive and negative frequencies.  As such, it's typically desirable to
+center our output around DC with \mCommand[https://www.mathworks.com/%
+help/matlab/ref/fftshift.html]{fftshift()}.  Other things to note are
+that the output may be complex-valued so we typically plot the magnitude
+of the FFT and that the frequency range is from \(-f_s/2\) to \(f_s/2\).
 \end{document}

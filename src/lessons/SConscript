@@ -29,6 +29,9 @@ env.SideEffect(Glob('_minted-05-plotting/*'), targets[-1])
 env.Depends(targets[-1], SConscript('05-plotting.d/SConscript'))
 
 targets += env.PDF('06-filter-analysis.tex')
+env.SideEffect(Glob('06-filter-analysis.d/*-eps-converted-to.pdf'), targets[-1])
+env.SideEffect(Glob('_minted-06-filter-analysis/*'), targets[-1])
+env.Depends(targets[-1], SConscript('06-filter-analysis.d/SConscript'))
 
 
 Return('targets')
