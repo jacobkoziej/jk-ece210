@@ -117,6 +117,11 @@
 	\end{minipage}%
 }
 
+\NewDocumentCommand{\mCommandGraphicSplit}{m}{%
+	\inputminted{matlab}{#1.m}%
+	\includegraphics[width=\textwidth]{#1.eps}%
+}
+
 \NewDocumentCommand{\mCommandOutput}{m}{%
 	\begin{minipage}{\textwidth}%
 	\inputminted{matlab}{#1.m}%
