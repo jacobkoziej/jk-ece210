@@ -8,7 +8,7 @@ s = s + 0.4 * exp(1j * 2 * pi * 10 * t);
 s = s + 0.3 * exp(-1j * 2 * pi * 40 * t);
 S = fftshift(fft(s));
 
-f = figure;
-plot(fs / l * (-l / 2:l / 2 - 1), S);
+figure;
+plot(fs / l * (-l / 2:l / 2 - 1), abs(S));
 ylabel('|S|');
 xlabel('f [Hz]');

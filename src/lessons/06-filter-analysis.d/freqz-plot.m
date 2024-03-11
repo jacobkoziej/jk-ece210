@@ -3,7 +3,7 @@
 H_dB = 20 * log10(abs(H));
 H_ph = rad2deg(unwrap(angle(H)));
 
-f = figure;
+figure;
 
 subplot(2, 1, 1);
 plot(w, H_dB);
