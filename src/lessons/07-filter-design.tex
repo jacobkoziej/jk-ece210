@@ -65,4 +65,27 @@ properties:
 	\item
 		Size of the transition band
 \end{itemize}
+
+That said, for the rest of the lesson we'll be designing a Chebyshev II
+bandstop filter as the process is largely the same for the other filter
+types.
+
+\section{Determining Filter Order}
+
+When designing a filter, we often specify all the properties but the
+order and leave that as a final step for MATLAB.
+
+\mCommandOutput{07-filter-design.d/ord}
+
+Here, we're designing a filter to operate at 44.1~kHz, with passband
+corner frequencies at 1.0 and 19.0~kHz, along with stopband corner
+frequencies at 2.2 and 16.8~kHz normalized to the Nyquist frequency.
+We're also allowing for 5~dB of peak-to-peak ripple in the passband and
+we're mandating the stopband be attenuated by 40~dB.
+
+An important thing to note about MATLAB order functions for
+bandpass/bandstop filters is that the returned order of the prototype
+filter is \textbf{half} of the actual order.  The reason for this is
+quite simple: a bandpass/bandstop filter is composed of a low-pass and
+high-pass filter!
 \end{document}
