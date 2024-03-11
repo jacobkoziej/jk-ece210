@@ -9,21 +9,17 @@ close all;
 
 %% 1
 i = 50;
-a_n = (2 .* (0:i) + 1);
+a_n = (2 .* (0:i) + 1)';
 
-t = linspace(-pi, pi, 1e3)';
+t = linspace(-pi, pi, 1e3);
 s = sin(a_n .* t) ./ a_n;
 
-sq = sum(s, 2);
+sq = sum(s);
 
 figure;
 hold on;
-
 plot(t, sq);
-for i = 1:size(s, 2)
-    plot(t, s(:, i));
-end
-
+plot(t, s);
 title('Fourier Series Approximation of a Square Wave');
 xlabel('t');
 xlim([t(1), t(end)]);
@@ -37,7 +33,6 @@ sgtitle('Fourier Series Approximation of a Square Wave');
 
 subplot(1, 2, 1);
 plot(t, sq);
-
 title('Approximation');
 xlabel('t');
 xlim([t(1), t(end)]);
@@ -46,12 +41,7 @@ xticks([-pi, -pi / 2, 0, pi / 2, pi]);
 ylim([-1, 1]);
 
 subplot(1, 2, 2);
-hold on;
-
-for i = 1:size(s, 2)
-    plot(t, s(:, i));
-end
-
+plot(t, s);
 title('Componenents');
 xlabel('t');
 xlim([t(1), t(end)]);
