@@ -11,7 +11,6 @@ ylabel('|S| [dB]');
 xlim([-1, 1] * fn);
 xlabel('f [Hz]');
 
-[b, a] = zp2tf(z, p, k);
 s_filt = filter(b, a, s);
 S_filt = fftshift(fft(s_filt));
 
