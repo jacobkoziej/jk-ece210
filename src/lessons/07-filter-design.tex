@@ -88,4 +88,28 @@ bandpass/bandstop filters is that the returned order of the prototype
 filter is \textbf{half} of the actual order.  The reason for this is
 quite simple: a bandpass/bandstop filter is composed of a low-pass and
 high-pass filter!
+
+\newpage
+
+\section{Filter Generation}
+
+Once we have the order, we are ready to generate the filter:
+
+\mCommandOutput{07-filter-design.d/gen}
+
+Note that this step largely depends on the filter you're trying to
+generate; hence, you must reference the corresponding MATLAB
+documentation.  Also, note that we're also using the zero-pole-gain
+variant of the output to avoid numerical instability that comes with a
+polynomial transfer function.
+
+\begin{minipage}{\textwidth}
+	We can quickly confirm that we got our desired filter with a
+	quick call to \mCommand[https://www.mathworks.com/help/signal/%
+	ref/freqz.html]{freqz()}:
+
+	\vspace{1em}
+
+	\mCommandGraphic{07-filter-design.d/response}
+\end{minipage}
 \end{document}
