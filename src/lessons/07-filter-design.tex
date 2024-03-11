@@ -19,4 +19,50 @@ daunting, but luckily for us, MATLAB provides us with easy-to-use
 digital filter design tools,\footurl{https://www.mathworks.com/help/%
 signal/filter-design.html} simplifying the process to nothing more than
 calling functions with the appropriate arguments.
+
+\section{Design Considerations}
+
+As an engineer, it is your job to determine the appropriate trade-offs
+when designing a filter for an application, as it really does come down
+to using the \enquote{right} tool for the job.  For now, let's consider
+only the following types of IIR filters:
+
+\begin{longtable}{lll}
+\toprule
+Name & Passband & Stopband \\
+\midrule
+Butterworth  & Monotonic  & Monotonic \\
+Chebyshev I  & Equiripple & Monotonic \\
+Chebyshev II & Monotonic  & Equiripple \\
+Elliptic     & Equiripple & Equiripple \\
+\bottomrule
+\\
+\caption{IIR Filter Types}
+\end{longtable}
+
+Given the table above, we can select a filter type that will suit our
+needs.  For example, we'd use a Butterworth filter in an audio
+application as we often desire monotonic behavior.  After all, we
+wouldn't want our filter to vary the attenuation of frequencies in our
+passband and stopband, as that would sound awful.
+
+Once we've decided on a filter type, we need to specify a few
+properties:
+
+\begin{itemize}
+	\item
+		Filter order
+
+	\item
+		Peak-to-peak passband ripple
+
+	\item
+		Stopband attenuation
+
+	\item
+		Passband/Stopband edge frequencies
+
+	\item
+		Size of the transition band
+\end{itemize}
 \end{document}
