@@ -112,4 +112,88 @@ polynomial transfer function.
 
 	\mCommandGraphic{07-filter-design.d/response}
 \end{minipage}
+
+\section{Filtering}
+
+Say you wanted to apply your filter to some signal, as one does, then
+there are two options in MATLAB:
+
+\subsection{Polynomial Representation}
+
+Let's generate white noise and apply our filter:
+
+\mCommandGraphicSplit{07-filter-design.d/polynomial}
+
+\newpage
+
+\subsection{Second-Order-Section Representation}
+
+When numerical stability becomes an issue, we can instead represent our
+digital filter as a cascade of \vocab{Second-Order-Sections (SOS)}:
+
+\begin{equation}
+	H(z) = g H_L(z) \dots H_1(z)
+\end{equation}
+
+where:
+
+\begin{equation}
+	H_k(z)
+	=
+	\frac
+	{b_{k \, 0} + b_{k \, 1} z^{-1} + b_{k \, 2} z^{-2}}
+	{1 + a_{k\, 1} z^{-1} + a_{k \, 2} z^{-2}}
+\end{equation}
+
+and \(g\) is the overall gain of the system.
+
+We can then realize this as a matrix of the form
+\(\matrixField{L}{6}{F}\):
+
+\begin{equation}
+	H_{\symrm{sos}}
+	=
+	\begin{bmatrix}
+		b_{1 \, 0}
+		&
+		b_{1 \, 1}
+		&
+		b_{1 \, 2}
+		&
+		1
+		&
+		a_{1 \, 1}
+		&
+		a_{1 \, 2}
+		\\
+		\vdots
+		&
+		\vdots
+		&
+		\vdots
+		&
+		\vdots
+		&
+		\vdots
+		&
+		\vdots
+		\\
+		b_{L \, 0}
+		&
+		b_{L \, 1}
+		&
+		b_{L \, 2}
+		&
+		1
+		&
+		a_{L \, 1}
+		&
+		a_{L \, 2}
+		\\
+	\end{bmatrix}
+\end{equation}
+
+We can apply our filter as a SOS like so in MATLAB:
+
+\mCommandOutput{07-filter-design.d/sos}
 \end{document}
