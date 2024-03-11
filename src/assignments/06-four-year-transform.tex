@@ -27,5 +27,31 @@ Assume for this assignment that we're sampling at 96 kHz.
 		of white noise with \mCommand[https://www.mathworks.%
 		com/help/matlab/ref/randn.html]{randn()}.  Finally, take
 		the DFT and plot its magnitude on the dB scale.
+
+	\item
+		Given the following digital filter:
+		\begin{equation}
+			H(z)
+			=
+			0.53
+			\frac
+			{
+				(z - (0.76 \pm \im 0.64))
+				(z - (0.69 \pm \im 0.71))
+				(z - (0.82 \pm \im 0.57))
+			}
+			{
+				(z - (0.57 \pm \im 0.78))
+				(z - (0.85 \pm \im 0.48))
+				(z - 0.24)
+				(z - 0.64)
+			}
+		\end{equation}
+		Generate a pole-zero plot along with plots for the
+		magnitude and phase response.  For the latter two, look
+		at \mCommand[https://www.mathworks.com/help/signal/ref/%
+		freqz.html]{freqz()}'s documentation to figure out how
+		to get the response of this filter over physical
+		frequencies.
 \end{enumerate}
 \end{document}
