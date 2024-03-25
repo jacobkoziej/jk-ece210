@@ -37,5 +37,7 @@ targets += env.PDF('07-filter-design.tex')
 env.SideEffect(Glob('_minted-07-filter-design/*'), targets[-1])
 env.Depends(targets[-1], SConscript('07-filter-design.d/SConscript'))
 
+targets += env.PDF('08-symbolic-math.tex')
+
 
 Return('targets')
