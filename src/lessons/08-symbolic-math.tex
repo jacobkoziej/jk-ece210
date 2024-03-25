@@ -44,4 +44,23 @@ typically a few ways of solving this issue: we can use fixed point
 arithmetic that gives us the precision we need, use a different
 numerical approximation, or use an analytic solution and evaluate it to
 the precision we desire.
+
+\section{Symbolic Expressions}
+
+We can create symbolic variables with
+\mCommand[https://www.mathworks.com/help/symbolic/syms.html]{syms}:
+
+\mCommandOutput{08-symbolic-math.d/simple}
+
+We can then substitute values into the expression:
+
+\mCommandOutput{08-symbolic-math.d/subst}
+
+We can also create symbolic functions:
+
+\mCommandOutput{08-symbolic-math.d/func}
+
+And we can evaluate them:
+
+\mCommandOutput{08-symbolic-math.d/func-eval}
 \end{document}
