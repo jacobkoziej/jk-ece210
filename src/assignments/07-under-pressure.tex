@@ -11,4 +11,46 @@
 
 \begin{document}
 \renderTitle
+
+Now that we've learned how to design filters, how about we apply what
+we've learned to do some real DSP?
+
+At Autonomy Lab, we recently redesigned our EV's braking system to pull
+on the brake pedal using feedback from a pressure sensor attached to the
+brake line.  The signal from the pressure sensor feeds into one of the
+built-in \vocab{analog-to-digial converters (ADCs)} of an ESP32-S3
+microcontroller where a brake control loop runs.  The issue with this
+setup is that the signal from this sensor has a lot of noise, and to add
+insult to injury, the ADC found on the ESP32-S3 is of poor quality; all
+of this results in a feedback signal that is useless for PID control.
+
+When designing this system, we gathered preliminary ADC data to see if
+we could even salvage the signal.  Here are some things to note about
+the data you'll be working with:
+
+\begin{itemize}
+	\item
+		We sampled at 80~kHz with no hardware low-pass filter to
+		determine how much we can lower the sample rate.
+		\aside{Typically, you'd add a hardware low-pass filter
+		to the input of an ADC at the Nyquist frequency to
+		mitigate aliasing, but you'll see that we can get away
+		without this!}
+
+	\item
+		The input signal was between 0 and 3.3~V and quantized
+		to 12 bits by the ADC.  Note that for this test, we
+		hadn't yet removed the inherent DC bias of the pressure
+		sensor nor amplified the sensor's signal to utilize the
+		full range of the ADC.
+
+	\item
+		We pressurized the brake line using a Hydrastar trailer
+		brake at 40\% power for 1000~ms after a delay of 10~ms.
+
+	\item
+		You can find the CSV with the data here: \url{https://%
+		raw.githubusercontent.com/jacobkoziej/jk-ece210/master/%
+		src/assignments/07-under-pressure.d/40p_1000ms.csv}
+\end{itemize}
 \end{document}
