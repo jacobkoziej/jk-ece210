@@ -98,4 +98,22 @@ of functions to manipulate symbolic expressions, and it is up to you to
 explore them to pick the right one for your application: \url{https://%
 www.mathworks.com/help/symbolic/formula-manipulation-and-%
 simplification.html}
+
+\section{Evaluation}
+
+Let's go back to our original problem and evaluate it symbolically:
+
+\mCommandOutput{08-symbolic-math.d/symbolic}
+
+Notice how MATLAB correctly simplified this integral into an equivalent
+symbolic expression!  And to get a floating point answer, we need to
+convert it to a \mCommand[https://www.mathworks.com/help/matlab/ref/%
+double.html]{double}:
+
+\mCommandOutput{08-symbolic-math.d/double-ans}
+
+But we can actually evaluate the expression to an arbitrary precision
+with \mCommand[https://www.mathworks.com/help/symbolic/vpa.html]{vpa()}:
+
+\mCommandOutput{08-symbolic-math.d/vpa-ans}
 \end{document}
