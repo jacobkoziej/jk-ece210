@@ -18,4 +18,30 @@ problems?  To do this, we can utilize the Symbolic Math Toolbox%
 \footurl{https://www.mathworks.com/products/symbolic.html} and turn
 tedious math homework into a thing of the past!\footnote{Disclaimer!
 I am not condoning robbing yourself of valuable practice!}
+
+\section{Numerical Stability}
+
+We know from MA~111 that we can define the natural logarithm like so:
+
+\begin{equation}
+	\ln(x)
+	=
+	\int^x_1
+	\frac{1}{t}
+	dt
+\end{equation}
+
+However, \(1 / t\) can become problematic when dealing with large
+floating point values.  Consider what happens when we try to compute
+\(\ln\left(1 \times 10^{32}\right)\) using this definition numerically:
+
+\mCommandOutput{08-symbolic-math.d/numerical}
+
+What we've run into is an issue with the \vocab{numerical stability} of
+floating point values.  You'll quickly learn that many approaches to
+solving a problem may result in numerical instability.  There are
+typically a few ways of solving this issue: we can use fixed point
+arithmetic that gives us the precision we need, use a different
+numerical approximation, or use an analytic solution and evaluate it to
+the precision we desire.
 \end{document}
