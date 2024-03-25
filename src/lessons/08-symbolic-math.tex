@@ -63,4 +63,39 @@ We can also create symbolic functions:
 And we can evaluate them:
 
 \mCommandOutput{08-symbolic-math.d/func-eval}
+
+\section{Solving and Manipulation}
+
+Let's start by solving symbolic expression for a variable:
+
+\mCommandOutput{08-symbolic-math.d/simple-solve}
+
+We can also add assumptions about our variables for MATLAB to respect:
+
+\mCommandOutput{08-symbolic-math.d/assume-solve}
+
+We can even solve a system of equations:
+
+\mCommandOutput{08-symbolic-math.d/sys-solve}
+
+The \mCommand[https://www.mathworks.com/help/symbolic/sym.solve.html]{%
+solve()} function is but one of many symbolic solvers available in
+MATLAB.  I encourage you to explore other available solvers to pick the
+right one for your application: \url{https://www.mathworks.com/help/%
+symbolic/equation-solving.html}
+
+We can also \mCommand[https://www.mathworks.com/help/symbolic/simplify.%
+html]{simplify()} symbolic expressions:
+
+\mCommandOutput{08-symbolic-math.d/simple-simplify}
+
+\newpage
+
+Note that \mCommand[https://www.mathworks.com/help/symbolic/simplify.%
+html]{simplify()} will try its best to simplify an expression, but it
+might not always do what you want.  Again, MATLAB offers a wide variety
+of functions to manipulate symbolic expressions, and it is up to you to
+explore them to pick the right one for your application: \url{https://%
+www.mathworks.com/help/symbolic/formula-manipulation-and-%
+simplification.html}
 \end{document}

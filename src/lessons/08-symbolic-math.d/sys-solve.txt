@@ -1,0 +1,6 @@
+sol =
+
+  struct with fields:
+
+    x: 3
+    y: 1

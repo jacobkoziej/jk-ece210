@@ -1,0 +1,1 @@
+simplify(exp(log(x)))
