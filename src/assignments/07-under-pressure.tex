@@ -53,4 +53,44 @@ the data you'll be working with:
 		raw.githubusercontent.com/jacobkoziej/jk-ece210/master/%
 		src/assignments/07-under-pressure.d/40p_1000ms.csv}
 \end{itemize}
+
+\begin{enumerate}[leftmargin=*]
+	\item
+		Use \mCommand[https://www.mathworks.com/help/matlab/%
+		ref/readmatrix.html]{readmatrix()} to read the CSV.  The
+		first column enumerates the samples, and the second
+		column contains the quantized ADC sample. \aside{Since
+		this is running on a microcontroller with strict timing
+		requirements, we make the transition band larger than
+		desired to decrease the filter order and as a result,
+		the CPU time spent filtering.}
+
+	\item
+		Normalize the signal between 0 and 1, take the DFT, and
+		remove the negative frequencies since this a real
+		signal.  Next, plot the DFT on a dB scale between 5 and
+		40~Hz.  Add a title and axis labels, and use \mCommand[%
+		https://www.mathworks.com/help/matlab/ref/yline.html]{%
+		yline()} to add dashed lines at -20 and -40~dB from the
+		peak frequency on the plot.
+
+	\item
+		Using the -20~dB dashed line on the previous plot,
+		determine the corner frequency for an elliptic low-pass
+		filter.  Have at most 0.1~dB of passband ripple,
+		attenuate by 40~dB in the stopband, and allow for a
+		10~Hz transition band.
+
+	\item
+		Obtain a SOS digital filter and plot its magnitude
+		response on the dB scale up to \(f\)\textsubscript{stop%
+		}~+~20~Hz.  Also, add horizontal and vertical dashed
+		lines to indicate the passband and stopband.
+
+	\item
+		Apply the SOS digital filter to the original signal and
+		plot it alongside the original signal.  Additionally,
+		add a dashed line around the DC bias for the filtered
+		signal.
+\end{enumerate}
 \end{document}
