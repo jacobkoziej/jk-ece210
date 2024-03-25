@@ -93,4 +93,12 @@ the data you'll be working with:
 		add a dashed line around the DC bias for the filtered
 		signal.
 \end{enumerate}
+
+If done correctly, you should achieve something similar to the
+following: \aside{The initial ripple in the filtered data is due to the
+jump discontinuity at \(t = 0\) and the low order of the filter.  This
+isn't an issue in our application, as our brake control will operate on
+the signal far beyond \(t = 0\).}
+
+\includegraphics[width=\textwidth]{07-under-pressure.d/data.eps}
 \end{document}
