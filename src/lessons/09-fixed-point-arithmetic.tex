@@ -65,4 +65,34 @@ We can also apply these properties to new fixed-point types with
 fimath.html]{fimath()}:
 
 \mCommandOutput{09-fixed-point-arithmetic.d/fimath-OverflowMode}
+
+\section{Fixed-Point Filter Design}
+
+For this part of the lesson, we'll be working with the brake pressure
+sensor data from Assignment
+07:\footurl{https://raw.githubusercontent.com/jacobkoziej/jk-ece210/master/src/assignments/07-under-pressure.d/40p_1000ms.csv}
+
+\inputminted{matlab}{09-fixed-point-arithmetic.d/load-data.m}
+
+Since fixed-point values are objects, we can't use our standard
+filtering functions on them, so we turn to filter objects:
+
+\aside{We use the Direct Form I structure over Direct Form II to gain
+more numerical stability at the cost of using double the amount of state
+variables.}
+
+\inputminted{matlab}{09-fixed-point-arithmetic.d/lpf.m}
+
+We can then apply the filter to our quantized data like so:
+
+\mCommandGraphicSplit{09-fixed-point-arithmetic.d/lpf-apply}
+
+Let's half our bit allocation to see how our filter performs:
+
+\mCommandGraphicSplit{09-fixed-point-arithmetic.d/lpf-poor}
+
+Ouch, it looks like the quantization error was too much to handle!  To
+combat this, we can decrease our filter's requirements to avoid higher
+orders and hence numerical instability in the form of overflows, but
+keep in mind this isn't a full-proof solution.
 \end{document}
