@@ -1,0 +1,7 @@
+T =
+
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 32
+        FractionLength: 30

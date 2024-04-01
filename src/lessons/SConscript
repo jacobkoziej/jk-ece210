@@ -42,6 +42,8 @@ env.SideEffect(Glob('_minted-08-symbolic-math/*'), targets[-1])
 env.Depends(targets[-1], SConscript('08-symbolic-math.d/SConscript'))
 
 targets += env.PDF('09-fixed-point-arithmetic.tex')
+env.SideEffect(Glob('_minted-09-fixed-point-arithmetic/*'), targets[-1])
+env.Depends(targets[-1], SConscript('09-fixed-point-arithmetic.d/SConscript'))
 
 
 Return('targets')

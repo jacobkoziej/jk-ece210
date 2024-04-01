@@ -1,0 +1,8 @@
+mu_0 =
+
+   1.2564e-06
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 32
+        FractionLength: 30

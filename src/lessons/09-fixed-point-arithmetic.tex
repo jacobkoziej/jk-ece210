@@ -22,4 +22,47 @@ box and must account for the substantial quantization erorr we've
 introduced.  Luckily for us, MATLAB offers us a Fixed-Point Designer%
 \footurl{https://www.mathworks.com/help/fixedpoint/index.html} for
 optimizing and implementing fixed-point algorithms.
+
+\section{Constructing Fixed-Point Types}
+
+\begin{figure}[!ht]
+\Centering
+\small
+\begin{tabular}{c}
+	\lstinputlisting[basicstyle=\ttfamily]%
+	{09-fixed-point-arithmetic.d/fixed-point.txt}
+\end{tabular}
+\caption{Fixed-Point Value}
+\end{figure}
+
+First, we must tell MATLAB the type of fixed-point value we wish to
+construct:
+
+\mCommandOutput{09-fixed-point-arithmetic.d/fixed-point-type}
+
+In our case, we've constructed a signed 32-bit fixed-point value with a
+fraction length of 30 bits, giving us a range from -2 to \(2 - 2^{-30}\)
+in increments of \(2^{-30}\).
+
+Now, to convert a \mCommand{double} to a fixed-point value, we call
+\mCommand[https://www.mathworks.com/help/fixedpoint/ref/embedded.fi.%
+html]{fi()}:
+
+\mCommandOutput{09-fixed-point-arithmetic.d/fi-call}
+
+\subsection{Set Fixed-Point Math Settings}
+
+At times, we may wish to change MATLAB's default behavior when
+performing fixed-point math.  Say we wanted to have two's complement
+overflow as opposed to saturation:
+
+\mCommandOutput{09-fixed-point-arithmetic.d/fi-saturate}
+
+\mCommandOutput{09-fixed-point-arithmetic.d/fi-wrap}
+
+We can also apply these properties to new fixed-point types with
+\mCommand[https://www.mathworks.com/help/fixedpoint/ref/embedded.%
+fimath.html]{fimath()}:
+
+\mCommandOutput{09-fixed-point-arithmetic.d/fimath-OverflowMode}
 \end{document}

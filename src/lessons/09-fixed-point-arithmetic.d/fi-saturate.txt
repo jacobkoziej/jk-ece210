@@ -1,0 +1,8 @@
+saturate =
+
+    2.0000
+
+          DataTypeMode: Fixed-point: binary point scaling
+            Signedness: Signed
+            WordLength: 32
+        FractionLength: 30
