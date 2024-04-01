@@ -1,0 +1,25 @@
+% SPDX-License-Identifier: CC-BY-NC-SA-4.0
+%
+% 09-fixed-point-arithmetic.tex -- precision? never head of her
+% Copyright (C) 2024  Jacob Koziej <jacobkoziej@gmail.com>
+
+\documentclass{article}
+
+\input{preamble}
+\title{Lesson 09: Fixed-Point Arithmetic}
+\input{postamble}
+
+\begin{document}
+\renderTitle
+
+One day, you may have the great fortune of implementing a digital filter
+on an embedded device where you only have a few microseconds to filter
+before the next sample.  In such a scenario, performing floating-point
+operations is impractical due to how much slower they are to \vocab{%
+Multiply–Accumulate (MAC)} operations.  To benefit from MAC operations,
+we turn to fixed-point arithmetic, but in the process, we open Pandora's
+box and must account for the substantial quantization erorr we've
+introduced.  Luckily for us, MATLAB offers us a Fixed-Point Designer%
+\footurl{https://www.mathworks.com/help/fixedpoint/index.html} for
+optimizing and implementing fixed-point algorithms.
+\end{document}
