@@ -51,8 +51,8 @@ ylim([-1, 1]);
 
 %% 3
 n = 64;
-x = linspace(-2 * pi, 2 * pi, 64);
-y = linspace(-2 * pi, 2 * pi, 64);
+x = linspace(-2 * pi, 2 * pi, n);
+y = linspace(-2 * pi, 2 * pi, n);
 
 [X, Y] = meshgrid(x, y);
 
