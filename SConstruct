@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2023--2024  Jacob Koziej <jacobkoziej@gmail.com>
 
-EnsureSConsVersion(4, 6)
+EnsureSConsVersion(4, 7, 0)
 EnsurePythonVersion(3, 12)
 
 
