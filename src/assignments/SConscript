@@ -27,5 +27,7 @@ targets += env.PDF('07-under-pressure.tex')
 env.SideEffect(Glob('_minted-07-under-pressure/*'), targets[-1])
 env.Depends(targets[-1], SConscript('07-under-pressure.d/SConscript'))
 
+targets += env.PDF('08-must-be-easy.tex')
+
 
 Return('targets')
