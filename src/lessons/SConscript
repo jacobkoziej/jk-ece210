@@ -46,6 +46,8 @@ env.SideEffect(Glob('_minted-09-fixed-point-arithmetic/*'), targets[-1])
 env.Depends(targets[-1], SConscript('09-fixed-point-arithmetic.d/SConscript'))
 
 targets += env.PDF('10-image-compression.tex')
+env.SideEffect(Glob('_minted-10-image-compression/*'), targets[-1])
+env.Depends(targets[-1], SConscript('10-image-compression.d/SConscript'))
 
 
 Return('targets')
