@@ -42,4 +42,57 @@ Here, we take the 2-D~DFT with \mCommand[https://www.mathworks.com/%
 help/matlab/ref/fft2.html]{fft2()} and use \mCommand[https://www.%
 mathworks.com/help/matlab/ref/imshow.html]{imshow()} to display its
 output.
+
+\section{Dropping Samples}
+
+Now for the fun: let's keep the \enquote{most important} samples by
+dropping the samples whose magnitude is below a certain threshold:
+
+\inputminted{matlab}{10-image-compression.d/compressed.m}
+
+Here, we \mCommand[https://www.mathworks.com/help/matlab/ref/sort.html]%
+{sort()} the magnitudes in ascending order and then zero out the samples
+that are below the threshold.  As a last step, we invert the 2-D~DFT
+with \mCommand[https://www.mathworks.com/help/matlab/ref/ifftshift.%
+html]{ifftshift()} and \mCommand[https://www.mathworks.com/help/matlab/%
+ref/ifft2.html]{ifft2()}.
+
+Remarkably, this approach offers surprisingly good results, especially
+when we reduce the resolution of the base image.  Although good, we can
+do much better, but that is far beyond the scope of this course!
+However, it doesn't take much to appreciate how instrumental compression
+is to our day-to-day lives.
+
+\begin{figure}[ht!]
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{10-image-compression.d/0.0000.jpg}
+		\caption{00.00\%}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{10-image-compression.d/0.9000.jpg}
+		\caption{90.00\%}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{10-image-compression.d/0.9900.jpg}
+		\caption{99.00\%}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{10-image-compression.d/0.9950.jpg}
+		\caption{99.50\%}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{10-image-compression.d/0.9975.jpg}
+		\caption{99.75\%}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{10-image-compression.d/0.9990.jpg}
+		\caption{99.90\%}
+	\end{subfigure}
+	\caption{Dropped Samples}
+\end{figure}
 \end{document}
