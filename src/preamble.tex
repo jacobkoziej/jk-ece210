@@ -109,6 +109,14 @@
 	}%
 }
 
+\NewDocumentCommand{\mCommandCustom}{mm}{%
+	\begin{minipage}{\textwidth}%
+	\inputminted{matlab}{#1.m}%
+	\vspace{1em}%
+	\includegraphics[width=\textwidth]{#1.#2}%
+	\end{minipage}%
+}
+
 \NewDocumentCommand{\mCommandGraphic}{m}{%
 	\begin{minipage}{\textwidth}%
 	\inputminted{matlab}{#1.m}%
