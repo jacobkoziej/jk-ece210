@@ -22,4 +22,15 @@ We'll be exploring rudimentary lossy compression using the DFT.
 	\includegraphics[width=\textwidth]{10-image-compression.d/original.jpg}
 	\caption{Jacob at the Summit of Half Dome}
 \end{figure}
+
+\section{Importing Images}
+
+\mCommandCustom{10-image-compression.d/grayscale}{jpg}
+
+Here we import the image into MATLAB with \mCommand[https://www.%
+mathworks.com/help/matlab/ref/imread.html]{imread()}, convert it to
+grayscale with \mCommand[https://www.mathworks.com/help/matlab/ref/%
+rgb2gray.html]{rgb2gray()} to the simplify analysis, and write it to a
+file with \mCommand[https://www.mathworks.com/help/matlab/ref/imwrite.%
+html]{imwrite()}.
 \end{document}
