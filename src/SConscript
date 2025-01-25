@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
-# Copyright (C) 2024  Jacob Koziej <jacobkoziej@gmail.com>
+# Copyright (C) 2024--2025  Jacob Koziej <jacobkoziej@gmail.com>
 
 Import('env')
 
@@ -20,7 +20,6 @@ targets += env.Substfile(
 )
 
 targets += env.PDF('submissions.tex')
-env.SideEffect(Glob('_minted-submissions/*'), targets[-1])
 
 targets += env.PDF('syllabus.tex')
 

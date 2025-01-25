@@ -18,14 +18,7 @@
         };
 
         inherit (pkgs) lib;
-        inherit (pkgs) python3;
         inherit (pkgs) texlive;
-
-        python3-pkgs = python3.withPackages (
-          ps: with ps; [
-            pygments
-          ]
-        );
 
         texlive-pkgs = texlive.withPackages (
           ps: with ps; [
@@ -78,7 +71,6 @@
               black
               mdformat
               pre-commit
-              python3-pkgs
               ruff
               scons
               shfmt

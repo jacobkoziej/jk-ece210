@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
-# Copyright (C) 2024  Jacob Koziej <jacobkoziej@gmail.com>
+# Copyright (C) 2024--2025  Jacob Koziej <jacobkoziej@gmail.com>
 
 Import('env')
 
@@ -8,45 +8,35 @@ Import('env')
 targets = []
 
 targets += env.PDF('01-matlab-at-a-glance.tex')
-env.SideEffect(Glob('_minted-01-matlab-at-a-glance/*'), targets[-1])
 env.Depends(targets[-1], SConscript('01-matlab-at-a-glance.d/SConscript'))
 
 targets += env.PDF('02-vectorization.tex')
-env.SideEffect(Glob('_minted-02-vectorization/*'), targets[-1])
 env.Depends(targets[-1], SConscript('02-vectorization.d/SConscript'))
 
 targets += env.PDF('03-indexing.tex')
-env.SideEffect(Glob('_minted-03-indexing/*'), targets[-1])
 env.Depends(targets[-1], SConscript('03-indexing.d/SConscript'))
 
 targets += env.PDF('04-functions.tex')
-env.SideEffect(Glob('_minted-04-functions/*'), targets[-1])
 env.Depends(targets[-1], SConscript('04-functions.d/SConscript'))
 
 targets += env.PDF('05-plotting.tex')
 env.SideEffect(Glob('05-plotting.d/*-eps-converted-to.pdf'), targets[-1])
-env.SideEffect(Glob('_minted-05-plotting/*'), targets[-1])
 env.Depends(targets[-1], SConscript('05-plotting.d/SConscript'))
 
 targets += env.PDF('06-filter-analysis.tex')
 env.SideEffect(Glob('06-filter-analysis.d/*-eps-converted-to.pdf'), targets[-1])
-env.SideEffect(Glob('_minted-06-filter-analysis/*'), targets[-1])
 env.Depends(targets[-1], SConscript('06-filter-analysis.d/SConscript'))
 
 targets += env.PDF('07-filter-design.tex')
-env.SideEffect(Glob('_minted-07-filter-design/*'), targets[-1])
 env.Depends(targets[-1], SConscript('07-filter-design.d/SConscript'))
 
 targets += env.PDF('08-symbolic-math.tex')
-env.SideEffect(Glob('_minted-08-symbolic-math/*'), targets[-1])
 env.Depends(targets[-1], SConscript('08-symbolic-math.d/SConscript'))
 
 targets += env.PDF('09-fixed-point-arithmetic.tex')
-env.SideEffect(Glob('_minted-09-fixed-point-arithmetic/*'), targets[-1])
 env.Depends(targets[-1], SConscript('09-fixed-point-arithmetic.d/SConscript'))
 
 targets += env.PDF('10-image-compression.tex')
-env.SideEffect(Glob('_minted-10-image-compression/*'), targets[-1])
 env.Depends(targets[-1], SConscript('10-image-compression.d/SConscript'))
 
 

@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
-# Copyright (C) 2023--2024  Jacob Koziej <jacobkoziej@gmail.com>
+# Copyright (C) 2023--2025  Jacob Koziej <jacobkoziej@gmail.com>
 
 EnsureSConsVersion(4, 7, 0)
 EnsurePythonVersion(3, 12)
@@ -31,7 +31,6 @@ env.Replace(PDFLATEX='lualatex')
 env.AppendUnique(
     PDFLATEXFLAGS=[
         '--halt-on-error',
-        '--shell-escape',
     ]
 )
 
