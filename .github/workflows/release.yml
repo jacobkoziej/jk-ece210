@@ -22,7 +22,7 @@ jobs:
 
       - uses: HatsuneMiku3939/direnv-action@v1.0.2
         with:
-          direnvVersion: 2.32.3
+          direnvVersion: 2.35.0
 
       - name: build
         run: scons
