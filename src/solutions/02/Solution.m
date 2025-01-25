@@ -1,7 +1,7 @@
 % SPDX-License-Identifier: GPL-3.0-or-later
 %
 % Solution.m -- Assignment 02 solution
-% Copyright (C) 2024  Jacob Koziej <jacobkoziej@gmail.com>
+% Copyright (C) 2024--2025  Jacob Koziej <jacobkoziej@gmail.com>
 
 clc;
 clear;
@@ -12,7 +12,7 @@ u = -4:2:4;
 v = linspace(0, pi, 5);
 
 %% 2
-f = prod(1:10);
+f = prod(2:10);
 
 %% 3
 A = zeros(2, 4);
