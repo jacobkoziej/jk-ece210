@@ -1,7 +1,7 @@
 % SPDX-License-Identifier: CC-BY-NC-SA-4.0
 %
 % submissions.tex -- submission guidelines
-% Copyright (C) 2024  Jacob Koziej <jacobkoziej@gmail.com>
+% Copyright (C) 2024--2025  Jacob Koziej <jacobkoziej@gmail.com>
 
 \documentclass{article}
 
@@ -26,7 +26,7 @@ file header can aid in this:
 % SPDX-License-Identifier: GPL-3.0-or-later
 %
 % fib.m -- calculate the Nth Fibonacci number
-% Copyright (C) 2024  Jacob Koziej <jacobkoziej@gmail.com>
+% Copyright (C) 2025  Jacob Koziej <jacobkoziej@gmail.com>
 \end{minted}
 
 Notice the file name and short justification for the file's existence.
@@ -51,44 +51,7 @@ add a MISS\_HIT pragma to ignore the line(s) in question.
 \section{Printing Code}
 
 Strangely enough, I would like paper submissions of your MATLAB code.
-To aid in creating printable PDFs, I've written \href{https://github.%
-com/jacobkoziej/jk-ece210/blob/master/bin/code2pdf}{\texttt{code2pdf}}.
-The first argument should be the path to the input file.  The second
-optional argument is the output file path.  If you don't specify an
-output path, the script will default to generating a PDF in the same
-base directory as the input file with the same base name.  Be careful,
-as this command can be destructive!
-
-\section{Saving Command Output}
-
-To save the output of your MATLAB code, utilize the \mCommand[https://%
-www.mathworks.com/help/matlab/ref/diary.html]{diary} command:
-
-\begin{minted}{matlab}
-diary output.txt
-ScriptToRun
-\end{minted}
-
-MATLAB then saves any output from \mCommand{ScriptToRun} to
-\mCommand{output.txt}.
-
-\section{Saving Figures}
-
-Part of the reason why people put up with MATLAB is because it can
-generate good figures from performed calculations.  That said, they're
-not of much use if condemned to the realm of MathWorks.  To create a PDF
-with vectorized versions of all your figures, add the following snippet
-to your code:
-
-\begin{minted}{matlab}
-OUTPUT = 'output.pdf';
-
-r = groot;
-
-delete(OUTPUT);
-for i = numel(r.Children):-1:1
-    exportgraphics(r.Children(i), OUTPUT, ...
-                   'Append', true, 'ContentType', 'vector');
-end
-\end{minted}
+You can utilize the \mCommand[https://www.mathworks.com/help/matlab/%
+ref/publish.html]{publish()} function to generate a PDF with syntax
+highlighting and evaluated code.
 \end{document}
