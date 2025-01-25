@@ -22,6 +22,7 @@ src = 'src'
 env = Environment(
     ENV={
         'PATH': os.environ['PATH'],
+        'PYTHONPATH': os.environ.get('PYTHONPATH'),
         'TERM': os.environ.get('TERM'),
     },
 )

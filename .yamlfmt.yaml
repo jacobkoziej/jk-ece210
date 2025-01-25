@@ -1,0 +1,9 @@
+---
+
+line_ending: lf
+formatter:
+  type: basic
+  include_document_start: true
+  pad_line_comments: 2
+  retain_line_breaks_single: true
+  trim_trailing_whitespace: true

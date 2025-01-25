@@ -1,7 +1,5 @@
-*.egg-info
-.direnv
-.ruff_cache
-.sconsign.dblite
-.venv
+/.direnv
+/.ruff_cache
+/.sconsign.dblite
+/build
 __pycache__
-build

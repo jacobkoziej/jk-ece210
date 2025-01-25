@@ -1,0 +1,75 @@
+[formatter.black]
+command = "black"
+includes = [
+  "*.py",
+]
+
+[formatter.mdformat]
+command = "mdformat"
+includes = [
+  "*.md",
+]
+
+[formatter.nix]
+command = "nix"
+options = [
+  "fmt",
+]
+includes = [
+  "*.nix",
+]
+
+[formatter.ruff]
+command = "ruff"
+options = [
+  "check",
+]
+includes = [
+  "*.py",
+]
+
+[formatter.shfmt]
+command = "shfmt"
+options = [
+  "--write",
+]
+includes = [
+  "*.sh",
+  ".envrc",
+]
+
+[formatter.toml-sort]
+command = "toml-sort"
+includes = [
+  "*.toml",
+]
+
+[formatter.yamlfmt]
+command = "yamlfmt"
+includes = [
+  "*.yaml",
+  "*.yml",
+]
+
+[formatter.yamllint]
+command = "yamllint"
+includes = [
+  "*.yaml",
+  "*.yml",
+]
+
+[global]
+excludes = [
+  "*.cfg",
+  "*.eps",
+  "*.in",
+  "*.jpg",
+  "*.lock",
+  "*.m",
+  "*.tex",
+  "*.txt",
+  ".editorconfig",
+  ".gitattributes",
+  ".gitignore",
+  "LICENSE.md",
+]
